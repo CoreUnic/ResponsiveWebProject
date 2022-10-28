@@ -1,0 +1,244 @@
+/* Universal and font-faces*/
+
+html {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed';
+    background-color: hsl(1, 100%, 30%);
+}
+
+h1, h2{
+    font-family: 'Noto Serif';
+}
+
+p, h3 {
+    font-family: 'Roboto Condensed';
+}
+
+a {
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/robotocondensed/v25/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZGCQYbw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Noto Serif';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/notoserif/v21/ga6Law1J5X9T9RW6j9bNdOwzfReecQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* Header*/
+#header-container {
+    width: 75%;
+    height: 35rem;
+    margin: 0 auto;
+}
+
+#header-container::after {
+    content: "";
+    width: 75%;
+    height: 35rem;
+    margin: 0 auto;
+    background-image: url("https://www.teahub.io/photos/full/201-2011561_anfield-main-stand-upper-view.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .7;
+    z-index: -1;
+    position: absolute;
+}
+
+
+.header-content .img-cont {
+    display: flex;
+    margin: 0 auto;
+    width: 13%;
+    justify-self: center;
+}
+
+.header-content .nav-bar {
+    text-align: center;
+    height: 3rem;
+    background-color: hsl(1, 100%, 30%);
+}
+
+.nav-list .boxr {
+    float: left;
+    padding-left: 5rem;
+}
+.nav-list .boxl {
+    float: right;
+    padding-right: 5rem;
+}
+
+.nav-list a {
+    font-family: 'Roboto Condensed';
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: .7rem;
+    color: white;
+}
+
+.header-content .nav-bar li{
+    display: inline-flex;
+}
+
+@media only screen and (max-width: 768px) {
+    #header-container {
+        width: 100%;
+        margin: 0;
+    }
+    #header-container::after {
+        height: 20rem;
+        width: 100%;
+        margin: 0 ;
+    }
+    .nav-list a{
+        font-size: 1rem;
+        margin-left: -1.5rem;
+    }
+}
+@media only screen and (max-width: 450px) {
+    #header-container::after {
+        height: 15rem;
+        width: 100%;
+    }
+    #header-container {
+        height: 20rem;
+    }
+    .header-content {
+        width: 100%;
+    }
+    .nav-list {
+        font-size: .8rem;
+        margin-left: rem;
+
+    }
+    .nav-list .boxr {
+        padding-left: 2rem;
+    }
+    .nav-list .boxl {
+        padding-right: 2rem;
+    }
+
+}
+
+/* Main Content */
+
+.content {
+    margin: 0 auto;
+    display: grid;
+    width: 75%;
+    height: 50rem;
+    grid-template-rows: repeat(3, 2fr, 3fr, 2fr);
+    gap: 2rem;
+}
+
+.boxes {
+    background-color:hsl(1, 100%, 10%);
+    color: white;
+    line-height: 1.4;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.history img {
+    position: inline-flex;
+    width: 20rem;
+    height: 13rem;
+}
+
+.history p {
+    display: inline-flex;
+    position:relative;
+}
+
+.coaches {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    position: relative;
+}
+
+.team a {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+}
+.teambox img {
+    width: 9rem;
+    height: 13rem;
+}
+
+.teambox1 img {
+    width: 10rem;
+    height: 13rem;
+}
+
+.players {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+    .content {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .history {
+        width: 50%;
+    }
+    .team {
+        width: 50%;
+    }
+    .coaches, .players{
+        justify-content: flex-start;
+        width: 100%;
+        overflow: scroll;
+    }
+}
+
+/* Footer */
+
+footer {
+    margin-top: 10rem;
+}
+
+.socials {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: space-between;
+}
+.icon {
+    text-align: center;
+    padding-left: 2rem;
+}
+.icon img {
+    width: 2rem;
+    height: 2rem;
+}
